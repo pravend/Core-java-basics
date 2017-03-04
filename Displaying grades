@@ -1,0 +1,51 @@
+package firsthomework;
+
+import java.util.Scanner;
+
+public class Displayinggrades {
+	public static void findgrades(float percentage) {
+		if (percentage <= 39) {
+			System.out.println("F");
+		} else if (percentage > 39 && percentage <= 49) {
+			System.out.println("E");
+		} else if (percentage > 49 && percentage <= 59) {
+			System.out.println("D");
+		} else if (percentage > 59 && percentage <= 69) {
+			System.out.println("C");
+		} else if (percentage > 69 && percentage <= 89) {
+			System.out.println("B");
+		} else if (percentage > 89) {
+			System.out.println("A");
+		}
+	}
+
+	public static float getPercentage(int a, int b, int c) {
+		return ((a + b + c) * 100.0f) / 300;
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int maths;
+		int physics;
+		int chemistry;
+		float percentage;
+		int sum;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter marks for maths");
+		maths = input.nextInt();
+		System.out.println("Enter marks for physics");
+		physics = input.nextInt();
+		System.out.println("Enter marks for chemistry");
+		chemistry = input.nextInt();
+		sum = maths + physics + chemistry;
+		System.out.println("The result of marks was= " + sum);
+
+		percentage = getPercentage(maths, physics, chemistry);
+
+		System.out.println("Percentage = " + percentage);
+		findgrades(percentage);
+
+	}
+
+}
